@@ -12,7 +12,7 @@ A Python module for accessing SchoolLoop!
 * Returns list: `[Period Number, Class Name, Teacher's Name, Grade (percentage), Grade Letter]`
 3. Get your homework
 * `homework = sl.get_homework()`. Variable can be anything
-* Return list: `[Assignment`, `Class`, `DueDate`, `Due]`. `DueDate` is a STRING formatted: `{YEAR}-{MONTH}-{DAY}`. `Due` is an INTEGER (0 = Not due in next two days, 1 = Due today, 2 = Due tomorrow).
+* Returns list: `[Assignment`, `Class`, `DueDate`, `Due]`. `DueDate` is a STRING formatted: `{YEAR}-{MONTH}-{DAY}`. `Due` is an INTEGER (0 = Not due in next two days, 1 = Due today, 2 = Due tomorrow).
 
 # Examples
 1. Get your homework
