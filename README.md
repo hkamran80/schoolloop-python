@@ -16,38 +16,38 @@ A Python module for accessing SchoolLoop!
 
 # Examples
 1. Get your homework
-`import sl
-from getpass import getpass
-
-schoolloop_subdomain = input("Subdomain: ")
-schoolloop_username = input("Username: ")
-schoolloop_password = getpass()
-s2 = login(schoolloop_subdomain, schoolloop_username, schoolloop_password)
-
-homework = sl.get_homework()
-for h in homework:
-  if h[4] == 1:
-    print(h[0] + " in " + h[1] + " due TODAY!" )
-  elif h[4] == 2:
-    print(h[0] + " in " + h[1] + " due TOMORROW!")
-  elif h[4] == 0:
-    print(h[0] + " in " + h[1] + " due " + h[2])
+`import sl  
+from getpass import getpass  
+  
+schoolloop_subdomain = input("Subdomain: ")  
+schoolloop_username = input("Username: ")  
+schoolloop_password = getpass()  
+s2 = login(schoolloop_subdomain, schoolloop_username, schoolloop_password)  
+  
+homework = sl.get_homework()  
+for h in homework:  
+  if h[4] == 1:  
+    print(h[0] + " in " + h[1] + " due TODAY!" )  
+  elif h[4] == 2:  
+    print(h[0] + " in " + h[1] + " due TOMORROW!")  
+  elif h[4] == 0:  
+    print(h[0] + " in " + h[1] + " due " + h[2])  
 `
 
 2. Get your grades
-`import sl
-from getpass import getpass
-
-schoolloop_subdomain = input("Subdomain: ")
-schoolloop_username = input("Username: ")
-schoolloop_password = getpass()
-s2 = login(schoolloop_subdomain, schoolloop_username, schoolloop_password)
-
-grades = sl.get_grades()
-for g in grades:
-   if str(g[3]) == "No grades published by teacher":
-      g_letter = ""
-   else:
-      g_letter = " (" + str(g[4]) + ")"
-   print(str(g[0]) + "°: " + str(g[1]) + " (" + str(g[2]) + "): " + str(g[3]) + g_letter)
+`import sl  
+from getpass import getpass  
+  
+schoolloop_subdomain = input("Subdomain: ")  
+schoolloop_username = input("Username: ")  
+schoolloop_password = getpass()  
+s2 = login(schoolloop_subdomain, schoolloop_username, schoolloop_password)  
+  
+grades = sl.get_grades()  
+for g in grades:  
+   if str(g[3]) == "No grades published by teacher":  
+      g_letter = ""  
+   else:  
+      g_letter = " (" + str(g[4]) + ")"  
+   print(str(g[0]) + "°: " + str(g[1]) + " (" + str(g[2]) + "): " + str(g[3]) + g_letter)  
 `
