@@ -16,5 +16,5 @@ A Python module for accessing SchoolLoop!
 * Returns list: `[Assignment`, `Class`, `DueDate`, `Due]`. `DueDate` is a STRING formatted: `{YEAR}-{MONTH}-{DAY}`. `Due` is an INTEGER (0 = Not due in next two days, 1 = Due today, 2 = Due tomorrow).
 
 # Examples
-1. (Get homework)[https://gist.github.com/hkamran80/9d01de3330a618cb9f571e98bf8c17c3]
-2. (Get grades)[https://gist.github.com/hkamran80/48560245bf111d7c9a86e518cbcf9cf1]
+1. [Get homework](https://gist.github.com/hkamran80/9d01de3330a618cb9f571e98bf8c17c3)
+2. [Get grades](https://gist.github.com/hkamran80/48560245bf111d7c9a86e518cbcf9cf1)
