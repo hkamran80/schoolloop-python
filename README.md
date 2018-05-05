@@ -7,9 +7,9 @@ A Python module for accessing SchoolLoop!
 
 1. Install
 * In your terminal:   
-  i. `git clone https://github.com/hkamran80/schoolloop-python`
-  ii. `cd schoolloop-python`
-  iii. `python3 setup.py install`
+  1. `git clone https://github.com/hkamran80/schoolloop-python`
+  2. `cd schoolloop-python`
+  3. `python3 setup.py install`
 
 2. REQUIRED: Logging in
 * To login: `s2 = sl.login({YOUR_SCHOOLLOOP_SUBDOMAIN}, {YOUR_SCHOOLLOOP_USERNAME}, {YOUR_SCHOOLLOOP_PASSWORD})`. The variable MUST be `s2` (see [Bug #1](https://github.com/hkamran80/schoolloop-python/issues/1) under [Issues](https://github.com/hkamran80/schoolloop-python/issues)).
