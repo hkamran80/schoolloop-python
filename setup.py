@@ -7,7 +7,7 @@ setup(name='schoolloop-python',
       author='H. Kamran',
       author_email='hkamran@unisontech.org',
       license='GPLv3+',
-      packages=['sl'],,
+      packages=['sl'],
       install_requires=[
           'bs4', 'requests',
       ],
