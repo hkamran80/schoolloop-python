@@ -1,5 +1,12 @@
-# SchoolLoop Connector
-# @hkamran80
+"""
+SchoolLoop Connector for Python
+Platform: All
+Contributors:
+  :: H. Kamran [@hkamran80] (author)
+
+Version: 1.0.0
+Last Updated: 2018-12-01, @hkamran80
+"""
 
 from bs4 import BeautifulSoup
 import requests
