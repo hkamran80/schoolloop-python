@@ -40,6 +40,12 @@ class SchoolLoopConnector:
     self.s2 = BeautifulSoup(r2.text, "html.parser")
 
   def homework(self):
+    """
+      list[4]: Due today? (1 = YES, 2 = NEXT, 3 = NO)
+      list[5]: Homework due date
+    """
+
+
     s2 = self.s2
     current_day = self.current_day
     next_day = self.next_day
@@ -52,7 +58,7 @@ class SchoolLoopConnector:
 
       hw_duedate = str(hw.find_all("td", {"class":"column padding_5 no_wrap"})[int(len(hw.find_all("td", {"class":"column padding_5 no_wrap"})))-1].string).strip()[5:]
       hw_dd = datetime.date(int(datetime.datetime.now().year), int(hw_duedate.split("/")[0]), int(hw_duedate.split("/")[1]))
-      
+
       h2 = str(hw_dd).split("-")
       if h2[1] + "/" + h2[2] + "/" + h2[0] == current_day:
         hw_dt = 1
