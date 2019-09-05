@@ -1,6 +1,6 @@
 # SchoolLoop for Python
-![Version: 1.0.0](https://badgen.net/badge/version/1.0.0/blue)
-![Language: Python](https://badgen.net/badge/language/python3/green)    
+![Version](https://img.shields.io/badge/version-1.0.1-green?style=for-the-badge)
+![Version](https://img.shields.io/badge/language-python%203-green?style=for-the-badge)   
 A Python module for accessing SchoolLoop!
 
 To use, run `python3 setup.py install`. 
