@@ -48,8 +48,11 @@ class SchoolLoopConnector:
 
   def homework(self):
     """
-      list[4]: Due today? (1 = YES, 2 = NEXT, 3 = NO)
-      list[5]: Homework due date
+      list[0]: Assignment Title
+      list[1]: Course Name
+      list[2]: Homework Due Date (datetime.date)
+      list[3]: Due today? (1 = YES, 2 = TOMORROW, 3 = NO)
+      list[4]: Homework Due Date
     """
 
 
@@ -86,24 +89,23 @@ class SchoolLoopConnector:
   def grades(self):
     s2 = self.s2
 
-    grades = []
-
+    grades = {}
     for row in s2.find_all("table", {"class": "student_row"}):
-      period = int(row.find("td", {"class":"period"}).string)
-      class_name = str(row.find("td", {"class": "course"}).a.text)
-
-      teacher_name = str(row.find("td", {"class": "teacher co-teacher"}).a.text).strip().split(", ")[1] + " " + str(row.find("td", {"class": "teacher co-teacher"}).a.text).strip().split(", ")[0]
-
+      period = int(row.select_one("td.period").text.strip())
+      class_name = row.select_one("td.course a").text.strip()
+      try:
+        teacher_name = " ".join(row.select_one("td.teacher.co-teacher a").text.strip().split(", ")[::-1])
+      except AttributeError:
+        teacher_name = " ".join(row.select_one("td.teacher.co-teacher").text.strip().split(", ")[::-1])
+      
       try:
         grade = float(row.find("div", {"class": "percent"}).text.replace("%", ""))
+        grade_letter = row.select_one("div.grade").text.strip()
       except AttributeError:
-        grade = "No grades published by teacher"
-
-      try:
-        grade_letter = str(row.find("div", {"class":"float_l grade"}).string)
-      except AttributeError:
+        grade = "No Grades Published"
         grade_letter = ""
-
-      grades.append([period, class_name, teacher_name, grade, grade_letter])
-
+        
+      grades[period] = {"course": class_name, "teacher": teacher_name, "grade": (grade_letter, grade)}
+      
     return grades
+  
