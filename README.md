@@ -3,6 +3,8 @@
 ![Version](https://img.shields.io/badge/language-python%203-green?style=for-the-badge)   
 A Python module for accessing SchoolLoop!
 
+## NOTE: This module is no longer supported by the developer and has been archived.
+
 To use, run `python3 setup.py install`. 
 Then, open a Python console (`python3` in your terminal)
 1. Type `import sl, getpass`.
